@@ -90,7 +90,8 @@ methods: {
   },
   async adoptVerify (id) {
     this.$confirm('确认通过审核吗?', {type: 'warning'}).then(async () => {
-      await changeVideoById(id)
+      await changeVideoById(id);
+      this.forceupdate();
     })
   },
   deleteVideo (index, _id) {
